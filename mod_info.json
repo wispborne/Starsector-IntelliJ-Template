@@ -1,0 +1,28 @@
+{
+    "id":"author_modname", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
+	"name":"Template Mod", # Displayed to the player
+	"author":"Wisp",
+    "utility":"false",
+	"version":"1.0.0",
+	"description":"Starsector IntelliJ template.",
+    "gameVersion": "0.95.1a-RC6", 
+  	"jars":["jars/Template.jar"],
+  	"modPlugin":"author.modname.TemplateModPlugin",
+	  	"dependencies": [
+        #{
+        #    "id": "lw_lazylib",
+        #    "name": "LazyLib",
+        #    #"version": "2.7b"
+        #},
+        #{
+        #    "id": "MagicLib",
+        #    "name": "MagicLib",
+        #    #"version": "0.34"
+        #},
+        #{
+        #    "id": "shaderLib",
+        #    "name": "GraphicsLib",
+        #    #"version": "1.5.1"
+        #}
+    ],
+}

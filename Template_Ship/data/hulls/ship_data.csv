@@ -1,0 +1,2 @@
+"name","id","designation","fleet pts","hitpoints","armor rating","max flux","flux dissipation","ordnance points","max speed","acceleration","deceleration","max turn rate","turn acceleration","mass","shield type","shield arc","shield upkeep","shield efficiency","number"
+"Template Lowtech Tempest","template_lowtech_tempest","Frigate",6,1500,400,2500,300,25,250,200,200,90,270,200,"OMNI",90,0.2,0.2,206

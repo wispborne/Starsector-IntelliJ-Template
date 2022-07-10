@@ -1,0 +1,37 @@
+{
+    # Points toward the online master .version file. This mod works by comparing
+    # the local and online version to see if there is a newer version available.
+    #
+    # The master file must be:
+    # - Online (duh)
+    # - Directly reachable (the URL goes to the raw file, not a redirect page)
+    # - Permanently linked and editable without the URL itself changing
+    #
+    # Bitbucket, GitHub, and other online repositories make excellent hosts.
+    # If you have a Dropbox account that's a few years old, that will also work.
+    # Just make sure it is in your Public folder and that you get the URL by
+    # right-clicking and selecting "Copy public link". Free Dropbox accounts
+    # created after October 2012 will not have a Public folder, unfortunately.
+    #
+    # Example links for common hosts:
+    "masterVersionFile":"url goes here",
+
+    "modName":"IntelliJ Template Mod",
+
+    # The ID of the thread where updates to this mod can be found (optional).
+    # This is used to launch directly to the forum thread from in the game.
+    # The ID is the set of digits at the end of the forum thread URL before the dot.
+    # For example: fractalsoftworks.com/forum/index.php?topic=8181.0 has an ID of 8181
+    "modThreadId":0,
+
+    # The current patch number
+    # Notation is major.minor.patch, trailing zeros are ignored
+    # This means version 2.1.0 shows up as v2.1, version 4.0.0 as v4, etc
+    # If you use major.minor notation you can just leave patch as 0
+    "modVersion":
+    {
+        "major":1,
+        "minor":0,
+        "patch":0 # Can be a number, character or string (1, 2, a, b, "-RC2", etc)
+    },
+}

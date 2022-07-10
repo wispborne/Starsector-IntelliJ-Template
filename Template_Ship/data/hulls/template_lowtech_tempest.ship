@@ -1,0 +1,94 @@
+{
+    "bounds": [
+        59,
+        9,
+        -11,
+        27,
+        -28,
+        -6,
+        -5,
+        -29,
+        48,
+        -6
+    ],
+    "center": [
+        32,
+        31
+    ],
+    "collisionRadius": 80,
+    "engineSlots": [
+        {
+            "angle": 180,
+            "contrailSize": 64,
+            "length": 64,
+            "location": [
+                -29,
+                0
+            ],
+            "style": "HIGH_TECH",
+            "width": 24
+        },
+        {
+            "angle": 180,
+            "contrailSize": 64,
+            "length": 32,
+            "location": [
+                -23,
+                19
+            ],
+            "style": "HIGH_TECH",
+            "width": 12
+        }
+    ],
+    "height": 92,
+    "hullId": "template_lowtech_tempest",
+    "hullName": "Template Lowtech Tempest",
+    "hullSize": "FRIGATE",
+    "shieldCenter": [
+        15,
+        0
+    ],
+    "shieldRadius": 64,
+    "spriteName": "graphics/Template/ships/template_lowtech_tempest.png",
+    "style": "HIGH_TECH",
+    "viewOffset": 0,
+    "weaponSlots": [
+        {
+            "angle": 60,
+            "arc": 235,
+            "id": "WS 001",
+            "locations": [
+                12,
+                20
+            ],
+            "mount": "TURRET",
+            "size": "MEDIUM",
+            "type": "ENERGY"
+        },
+        {
+            "angle": 260,
+            "arc": 235,
+            "id": "WS 002",
+            "locations": [
+                -4,
+                -17
+            ],
+            "mount": "TURRET",
+            "size": "MEDIUM",
+            "type": "ENERGY"
+        },
+        {
+            "angle": 0,
+            "arc": 5,
+            "id": "WS 003",
+            "locations": [
+                30,
+                -15
+            ],
+            "mount": "HARDPOINT",
+            "size": "SMALL",
+            "type": "MISSILE"
+        }
+    ],
+    "width": 64
+}
