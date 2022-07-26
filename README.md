@@ -23,6 +23,15 @@ You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.1 as of wr
 
 ## IntelliJ Configuration
 
+### Set your SDK (the thing that compiles the Java code)
+
+- Open `File -> Project Structure -> Project`.
+- Ensure that the `Language Level` is set to `7`.
+- Set an SDK. This can be 1.7 (aka 7), 1.8 (aka 8), or higher. You can also download an SDK from this dropdown.
+  - If in doubt, use 1.8. 
+
+![SDKs!](readme_files/intellij-sdk.png "SDKs")
+
 ### Ensure that your run configuration is correct:
 
 - In IntelliJ, click `Run - Edit Configurations`.
@@ -36,12 +45,18 @@ You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.1 as of wr
 
   ```-server -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005 -Djava.library.path=./native/linux -Xms1536m -Xmx1536m -Xss2048k -classpath janino.jar:commons-compiler.jar:commons-compiler-jdk.jar:starfarer.api.jar:starfarer_obf.jar:jogg-0.0.7.jar:jorbis-0.0.15.jar:json.jar:lwjgl.jar:jinput.jar:log4j-1.2.9.jar:lwjgl_util.jar:fs.sound_obf.jar:fs.common_obf.jar:xstream-1.4.10.jar -Dcom.fs.starfarer.settings.paths.saves=./saves -Dcom.fs.starfarer.settings.paths.screenshots=./screenshots -Dcom.fs.starfarer.settings.paths.mods=./mods -Dcom.fs.starfarer.settings.paths.logs=. -Dcom.fs.starfarer.settings.linux=true com.fs.starfarer.StarfarerLauncher```
 
+![Run configuration!](readme_files/intellij-run.png "Run configuration")
+
 ### "I didn't install the game to the default location"
 
 If your game isn't installed to `C:\Program Files (x86)\Fractal Softworks\Starsector` then we need to fix some more file paths.
 
+If you did install to the default location, skip to the next part.
+
 1. Open `.idea/libraries/starfarer_api.xml`. It should be fairly clear what needs to be fixed; any path that's pointing to the default game installation should be changed to point to wherever you have it installed.
    1. It's also possible to edit this in File -> Project Structure -> Libraries, but for editing en masse, editing the xml directly is simpler.
+
+![Library configuration!](readme_files/intellij-libs.png "Library configuration")
 
 ### It's working, now what?
 
@@ -58,18 +73,24 @@ See that in `src`, we have `author.modname` as the package (which matches the fo
        right-click, and choose Refactor -> Rename. Change it to match your username and modname (or whatever you prefer)
        .
     2. When done, you shouldn't have any code in `author.modname`. If that still exists, it can be safely deleted.
+    3. 
+   ![Rename!](readme_files/intellij-rename.png "Rename")
 2. [ ] Now, we've changed where the ModPlugin is located and we need to tell the game the new location the game can call
    it
    when the game loads.
     1. Open the `mod_info.json` file, find `"modPlugin"`, and edit it to use your new package (if you forgot, it's the
        first line of your `TemplateModPlugin.java` file).
+3. [ ] You can also change the name of the .jar file, which is `Template.jar` by default, in `File -> Project Structure -> Artifacts`, then just right-click on `Template.jar` and choose rename.
+   1. [ ] You will also need to update the name of the .jar in your `mod_info.json` file so the game knows where to look.
+
+![Jar!](readme_files/intellij-artifact.png "Jar")
 
 ## Adding more dependencies/libraries
 
 LazyLib not enough?
 
-1. File -> Project Structure -> Modules -> "starsector-intellij-template" -> Dependencies tab -> `+` icon -> JARS or
-   Directories. Select the .jar(s) you want to add.
+1. `File -> Project Structure -> Modules -> "starsector-intellij-template" -> Dependencies tab -> + icon -> JARS or
+   Directories`. Select the .jar(s) you want to add.
     2. Leave Export unchecked and Scope to Compile.
 
 ## FAQ
@@ -78,6 +99,8 @@ LazyLib not enough?
     - Yes, but don't overwrite anything you already have.
     - You probably mostly want the `.idea` folder (which contains IntelliJ configuration) and the `src` folder - then,
       move any code you have into the `src` folder and fix the `package` in each .java file (ask if you don't know how).
+- Everything is working! Do I still need the `readme_files` folder?
+  - lol no, delete it.
 
 ## Explanation of Folders/Files
 
