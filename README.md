@@ -30,6 +30,7 @@ You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.2 as of wr
 - Set an SDK. This can be 1.7 (aka 7), 1.8 (aka 8), or higher. You can also download an SDK from this dropdown, if the Download option is provided.
   - Otherwise, [download JDK 7](https://drive.google.com/file/d/1cle4yGhPkROCu3z5WKHKLR098ObGLwPV/view), extract it anywhere, and set it as the SDK.
   - JDK 7: https://drive.google.com/file/d/1cle4yGhPkROCu3z5WKHKLR098ObGLwPV/view
+  - Using JDK 8 (1.8) or higher _may_ have slightly faster compile times, but is otherwise the same as using JDK 7 (1.7).
 
 ![SDKs!](readme_files/intellij-sdk.png "SDKs")
 
