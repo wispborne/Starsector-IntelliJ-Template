@@ -9,7 +9,7 @@ This is a template for a generic Starsector mod using Java.
 When you are done, you will have a mod that does nothing, but is ready for anything to be added.
 
 Written for IntelliJ Community ([free download](https://www.jetbrains.com/idea/download)), but should work with any IDE.
-You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.1 as of writing.
+You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.2 as of writing.
 
 ## Initial Setup Checklist
 
@@ -27,8 +27,9 @@ You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.1 as of wr
 
 - Open `File -> Project Structure -> Project`.
 - Ensure that the `Language Level` is set to `7`.
-- Set an SDK. This can be 1.7 (aka 7), 1.8 (aka 8), or higher. You can also download an SDK from this dropdown.
-  - If in doubt, use 1.8. 
+- Set an SDK. This can be 1.7 (aka 7), 1.8 (aka 8), or higher. You can also download an SDK from this dropdown, if the Download option is provided.
+  - Otherwise, [download JDK 7](https://drive.google.com/file/d/1cle4yGhPkROCu3z5WKHKLR098ObGLwPV/view), extract it anywhere, and set it as the SDK.
+  - JDK 7: https://drive.google.com/file/d/1cle4yGhPkROCu3z5WKHKLR098ObGLwPV/view
 
 ![SDKs!](readme_files/intellij-sdk.png "SDKs")
 
