@@ -93,7 +93,7 @@ LazyLib not enough?
 
 1. `File -> Project Structure -> Modules -> "starsector-intellij-template" -> Dependencies tab -> + icon -> JARS or
    Directories`. Select the .jar(s) you want to add.
-    2. Leave Export unchecked and Scope to Compile.
+2. Leave Export unchecked and Scope to Compile.
 
 ## FAQ
 
