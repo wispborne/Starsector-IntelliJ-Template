@@ -11,13 +11,7 @@ When you are done, you will have a mod that does nothing, but is ready for anyth
 Written for IntelliJ Community ([free download](https://www.jetbrains.com/idea/download)), but should work with any IDE.
 You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.2 as of writing.
 
-## Initial Setup Checklist
-
-- Check the Wiki at <https://starsector.fandom.com/wiki/IntelliJ_IDEA_Setup> for setup instructions.
-
-- Don't forget to enable your mod on the Starsector launcher!
-
-### Optional
+## Optional
 
 - Change `LICENSE` to something else.
 
