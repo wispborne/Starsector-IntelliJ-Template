@@ -54,6 +54,14 @@ If you did install to the default location, skip to the next part.
 
 ![Library configuration!](readme_files/intellij-libs.png "Library configuration")
 
+### Running the game
+
+To actually build your mod and run the game with it, look for and **click the Debug icon**, which looks like a bug and is green by default. It should be at the top of IntelliJ and next to Build (hammer icon) and Run (play icon) buttons.
+
+Clicking the Debug button will build the .jar, launch the game and pause it, attach IntelliJ's debugger, and unpause the game. The game's launcher will then show. Don't forget to enable your mod in the launcher.
+
+Don't click the Run (play) icon; it will cause the game to wait indefinitely for the debugger and never launch.
+
 ### It's working, now what?
 
 Now you have a template that works, but we need to personalize it so multiple people can use the template without
