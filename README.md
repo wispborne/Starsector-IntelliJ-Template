@@ -15,6 +15,11 @@ You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.2 as of wr
 
 - Change `LICENSE` to something else.
 
+## Initial
+
+- Download or `git clone` this repository wherever you want to work.
+  - The simplest is to put it right into your mods folder; otherwise, you'll need to either copy it each time you change things or make an alias to it.
+
 ## IntelliJ Configuration
 
 ### Set your SDK (the thing that compiles the Java code)
