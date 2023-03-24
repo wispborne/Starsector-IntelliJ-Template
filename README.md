@@ -83,7 +83,7 @@ See that in `src`, we have `author.modname` as the package (which matches the fo
 
 ## Adding more dependencies/libraries
 
-LazyLib not enough?
+Need to depend on another mod or library (e.g. [GraphicsLib], [LazyLib], [LunaLib], [MagicLib], [Nexelerin], etc)?
 
 1. `File -> Project Structure -> Modules -> "starsector-intellij-template" -> Dependencies tab -> + icon -> JARS or
    Directories`. Select the .jar(s) you want to add.
@@ -121,3 +121,9 @@ LazyLib not enough?
 Author: Wisp
 
 Lowtech Tempest: Selkie
+
+[GraphicsLib]: https://bitbucket.org/DarkRevenant/graphicslib/
+[MagicLib]: https://github.com/MagicLibStarsector/MagicLib/
+[LazyLib]: https://github.com/LazyWizard/lazylib/
+[LunaLib]: https://github.com/Lukas22041/LunaLib/
+[Nexelerin]: https://github.com/Histidine91/Nexerelin/
