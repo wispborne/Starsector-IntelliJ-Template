@@ -122,7 +122,7 @@ Author: Wisp
 
 Lowtech Tempest: Selkie
 
-[GraphicsLib]: https://bitbucket.org/DarkRevenant/graphicslib/
+[GraphicsLib]: https://fractalsoftworks.com/forum/index.php?topic=10982.0
 [MagicLib]: https://github.com/MagicLibStarsector/MagicLib/
 [LazyLib]: https://github.com/LazyWizard/lazylib/
 [LunaLib]: https://github.com/Lukas22041/LunaLib/
