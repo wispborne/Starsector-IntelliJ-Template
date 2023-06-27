@@ -1,0 +1,53 @@
+name: GitHub Release
+
+on:
+  # Triggers the workflow on pushing a tag only
+  push:
+    tags: "*"
+    branches:
+      - "!*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out repository under $GITHUB_WORKSPACE, so your job can access it
+      # GitHub Actions by default doesn't check out tags, so make sure those are included
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Fetch Tags
+        run: git fetch --prune --unshallow --tags
+
+        # Tags with unstable, dev, qa in them will be marked as prerelease.
+      - name: Set Variables
+        run: |
+          echo "VERSION=$(git describe --tags)" >> $GITHUB_ENV
+          git log --format=%B -n 1 $(git log -1 --pretty=format:"%h") | cat - > changes.txt
+          if [[ "$(git describe --tags)" =~ .*"dev"|"qa"|"unstable".* ]]; then
+            echo "IS_PRERELEASE=true" >> $GITHUB_ENV;
+          else
+            echo "IS_PRERELEASE=false" >> $GITHUB_ENV;
+          fi
+
+      - name: Create Mod Zipfile
+        run: |
+          cd ./.github/workflows/
+          chmod +x ./runner.sh
+          ./runner.sh
+          
+      - name: Publish Release on GitHub
+        uses: "ncipollo/release-action@v1.12.0"
+        with:
+          name: ${{ env.VERSION }}
+          tag: ${{ env.VERSION }}
+          bodyFile: changes.txt
+          draft: false
+          prerelease: '${{ env.IS_PRERELEASE }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: ".github/workflows/artifacts/*"
