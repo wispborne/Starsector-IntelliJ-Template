@@ -1,37 +1,48 @@
 {
-    # Points toward the online master .version file. This mod works by comparing
-    # the local and online version to see if there is a newer version available.
-    #
-    # The master file must be:
-    # - Online (duh)
-    # - Directly reachable (the URL goes to the raw file, not a redirect page)
-    # - Permanently linked and editable without the URL itself changing
-    #
-    # Bitbucket, GitHub, and other online repositories make excellent hosts.
-    # If you have a Dropbox account that's a few years old, that will also work.
-    # Just make sure it is in your Public folder and that you get the URL by
-    # right-clicking and selecting "Copy public link". Free Dropbox accounts
-    # created after October 2012 will not have a Public folder, unfortunately.
-    #
-    # Example links for common hosts:
-    "masterVersionFile":"url goes here",
+  # Points toward the online master .version file. This mod works by comparing
+  # the local and online version to see if there is a newer version available.
+  #
+  # The master file must be:
+  # - Online (duh)
+  # - Directly reachable (the URL goes to the raw file, not a redirect page)
+  # - Permanently linked and editable without the URL itself changing
+  #
+  # GitHub and other online repositories make excellent hosts.
+  #
+  # Example links for common hosts:
+  # GitHub: https://raw.githubusercontent.com/MagicLibStarsector/MagicLib/master/magiclib.version
+  # Dropbox: https://www.dropbox.com/s/rnzm1m8l8ik8a6l/modname.zip?dl=1  # Note the ?dl=1
+  # Google Drive: https://drive.google.com/uc?id=1dbx-oOyFxy6l2ECLHqNtWg5kBW3lXBo7&export=download  # Note the &export=download
+  "masterVersionFile": "url goes here",
 
-    "modName":"IntelliJ Template Mod",
+  "modName": "IntelliJ Template Mod",
 
-    # The ID of the thread where updates to this mod can be found (optional).
-    # This is used to launch directly to the forum thread from in the game.
-    # The ID is the set of digits at the end of the forum thread URL before the dot.
-    # For example: fractalsoftworks.com/forum/index.php?topic=8181.0 has an ID of 8181
-    "modThreadId":0,
-
-    # The current patch number
-    # Notation is major.minor.patch, trailing zeros are ignored
-    # This means version 2.1.0 shows up as v2.1, version 4.0.0 as v4, etc
-    # If you use major.minor notation you can just leave patch as 0
-    "modVersion":
+  # The current patch number
+  # Notation is major.minor.patch, trailing zeros are ignored
+  # This means version 2.1.0 shows up as v2.1, version 4.0.0 as v4, etc
+  # If you use major.minor notation you can just leave patch as 0
+  "modVersion":
     {
-        "major":1,
-        "minor":0,
-        "patch":0 # Can be a number, character or string (1, 2, a, b, "-RC2", etc)
+      "major": 1,
+      "minor": 0,
+      "patch": 0 # Can be a number, character or string (1, 2, a, b, "-RC2", etc)
     },
+
+  # OPTIONAL
+  # The ID of the thread where updates to this mod can be found.
+  # This is used to launch directly to the forum thread from in the game.
+  # The ID is the set of digits at the end of the forum thread URL before the dot.
+  # For example: fractalsoftworks.com/forum/index.php?topic=8181.0 has an ID of 8181
+  "modThreadId": 0, # eg 8181
+
+  # OPTIONAL
+  # A download link directly to the latest version of your mod.
+  # This is used by mod managers/version checkers (eg SMOL, MOSS, LunaLib) to let users quickly update/download without visiting your mod page.
+  "directDownloadURL": "https://github.com/MagicLibStarsector/MagicLib/releases/download/1.0.0/MagicLib-1.0.0.zip",
+
+  # OPTIONAL
+  # A link to your changelog.
+  # This is used by mod managers/version checkers (eg SMOL, MOSS, LunaLib) to display changelogs without visiting your mod page.
+  # May be plain text or markdown, though plain text is more likely to be rendered correctly in all viewers.
+  "changelogURL": "https://raw.githubusercontent.com/MagicLibStarsector/MagicLib/master/CHANGELOGS.md",
 }
