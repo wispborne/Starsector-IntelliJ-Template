@@ -1,6 +1,6 @@
 {
   # SETUP
-  # 1. In `data/config/version/version_files.csv`, uncomment the second line (delete the `#` on the second line).
+  # 1. In `data/config/version/version_files.csv`, uncomment both lines (delete the `#`'s).
   # 2. Change `yourName_uniqueid.version` to, well, your name (e.g. wisp) and your mod's id.
   # 3. Rename THIS .version file that you're reading to be the same name you just picked.
   # Now, the game/Version Checker will look at `data/config/version/version_files.csv` and it will tell it how to find the file you're reading.
