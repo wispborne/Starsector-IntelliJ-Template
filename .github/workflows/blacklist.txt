@@ -9,4 +9,6 @@ DO_NOT_USE
 ^gradle
 .flac$
 ^.github/
+^.run/
+.iml$
 banner.png$
