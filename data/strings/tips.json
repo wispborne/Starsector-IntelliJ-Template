@@ -1,0 +1,7 @@
+{
+# Tips are a good way to give suggestions on how to use ships/weapons, background info on your faction, or other useful information.
+	tips:[
+#         {"freq":0, "tip":"You can change the frequency of tips by adding a json object instead of a string, like so. For example, this tip has a frequency of 0 and will never show up. The default freq value is 1."},
+#         "Example tip.",
+     ],
+}

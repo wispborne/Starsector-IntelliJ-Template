@@ -1,0 +1,3 @@
+id,type,text1,text2,text3,text4,notes
+# Types: WEAPON,SHIP,RESOURCE,CUSTOM,ACTION_TOOLTIP,ASTEROID,PLANET,SHIP_SYSTEM,FACTION,TERRAIN
+#astral,SHIP,"Text goes here",,,,

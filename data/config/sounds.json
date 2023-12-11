@@ -1,0 +1,28 @@
+{
+# Any custom music your mod adds can be added here, then played via code using one of the song methods in `Global.getSoundPlayer()`.
+# "music":{
+#		"music_campaign":[
+#			{"file":"miscallenous_corvus_campaign_music.ogg","source":"sounds/music/music.bin","volume":1}, 
+#		],
+#
+# 'source' can also be a directory
+#		"music_default_market_neutral":[
+#			{
+#				"source":"sounds/music/music.bin",
+#				"volume":0.8,
+#				"files":[
+#					"faction_generic_market_01_neutral_var01.ogg",
+#					"faction_generic_market_01_neutral_var02.ogg",
+#				],
+#				"randomStart":true, 
+#			},
+#		],
+#	},
+	
+# Loose sound files for anything else, e.g. weapons, systems, or any other effects.
+# They may be played via code using one of the sound methods in `Global.getSoundPlayer()`.
+#    "mote_attractor_launch_mote":[
+#            {"file":"sounds/sfx_systems/mote_attractor_spawn_01.ogg","pitch":1,"volume":0.4},
+#            {"file":"sounds/sfx_systems/mote_attractor_spawn_02.ogg","pitch":1,"volume":0.4},
+#    ],
+}

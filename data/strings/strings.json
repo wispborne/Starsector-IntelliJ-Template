@@ -1,0 +1,5 @@
+{
+	# You can add strings here and get them in code using Global.getSettings().getString().
+	# This makes it much easier for people to translate your mod.
+	# See the vanilla strings.json file for examples and for tokens (variables) you can use and have the game replace.
+}

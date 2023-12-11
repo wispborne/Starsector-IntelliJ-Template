@@ -1,0 +1,4 @@
+id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
+# Add your fighter wings here. One left commented out for reference.
+# See https://starsector.fandom.com/wiki/Wing_data.csv_Overview
+#flash_wing,flash_Bomber,"no_sell, bomber, remnant, bomber5, auto_fighter, merc",3,,5,12,V,4000,2500,300,4,BOMBER,Strike Drone,18,8000,,,,,,,,,,,,,21
