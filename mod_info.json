@@ -5,7 +5,7 @@
     "utility":"false",
 	"version":"1.0.0",
 	"description":"Starsector IntelliJ template.",
-    "gameVersion": "0.96a-RC10", 
+    "gameVersion": "0.97a-RC6",
   	"jars":["jars/Template.jar"],
   	"modPlugin":"author.modname.TemplateModPlugin",
 	  	"dependencies": [
