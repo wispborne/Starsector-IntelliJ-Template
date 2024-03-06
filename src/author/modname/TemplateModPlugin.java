@@ -15,13 +15,8 @@ public class TemplateModPlugin extends BaseModPlugin {
     @Override
     public void onNewGame() {
         super.onNewGame();
-
-        // The code below requires that Nexerelin is added as a library (not a dependency, it's only needed to compile the mod).
-//        boolean isNexerelinEnabled = Global.getSettings().getModManager().isModEnabled("nexerelin");
-
-//        if (!isNexerelinEnabled || SectorManager.getManager().isCorvusMode()) {
-//                    new MySectorGen().generate(Global.getSector());
-            // Add code that creates a new star system (will only run if Nexerelin's Random (corvus) mode is disabled).
-//        }
+        // Add your code here, or delete this method (it does nothing unless you add code)
     }
+
+    // You can add more methods from ModPlugin here. Press Control-O in IntelliJ to see options.
 }
