@@ -1,0 +1,149 @@
+{
+  $schema: "https://json-schema.org/draft/2020-12/schema",
+  title: "mod_info",
+  description: "A schema representing the structure of a Starsector mod configuration file.",
+  type: "object",
+  properties: {
+    id: {
+      type: "string",
+      "x-intellij-html-description": "Identifier for mod in code<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Must be unique - <i>ie</i> not identical to that of any other mod</li><li>Should be human readable to facilitate debugging</li><li>Best practice is to use the format <code>yourName_modName</code></li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"wisp_perseanchronicles\"</code></li><li><code>\"timid_supply_forging\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#id\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    name: {
+      type: "string",
+      "x-intellij-html-description": "Name of mod as shown to user in-game<h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"Persean Chronicles\"</code></li><li><code>\"Supply Forging\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#name\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    author: {
+      type: "string",
+      "x-intellij-html-description": "Name of mod author as shown to user in the mod loader following the description.<h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"Wisp\"</code></li><li><code>\"Techpriest\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#author\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    utility: {
+      type: [
+        "boolean",
+      ],
+      "enum": [
+        true,
+        false,
+      ],
+      "x-intellij-html-description": "Denotes whether the mod can be loaded alongside total conversion mods. Defaults to <code>false</code>.<h6 style=\"font-size: em;\">Examples</h6><ul><li><code>true</code></li><li><code>false</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#utility\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    version: {
+      type: [
+        "object",
+      ],
+      properties: {
+        major: {
+          type: [
+            "integer",
+            "string",
+          ],
+          "x-intellij-html-description": "Major version of a mod. Increment for changes to your mod plugin/API that may impact cross-mod compatibility with any mods invoking methods of the current major version of your mod<a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a>",
+        },
+        minor: {
+          type: [
+            "integer",
+            "string",
+          ],
+          "x-intellij-html-description": "Minor version of a mod. Increment for changes that may make the new version incompatible with saves running the current minor version of your mod<a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a>",
+        },
+        patch: {
+          type: [
+            "integer",
+            "string",
+          ],
+          "x-intellij-html-description": "Patch version of a mod. Increment for changes that maintain compatibility with saves running the same minor version of your mod<a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a>",
+        },
+      },
+      required: [
+        "major",
+        "minor",
+        "patch",
+      ],
+      "x-intellij-html-description": "Version of the mod, expressed in SemVer format (major/minor/patch); game uses this to determine whether the set of mods associated with a save-file match those that the player currently has loaded.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Increment <code>major</code> for changes to your mod plugin/API that may impact cross-mod compatibility</li><li>Increment <code>minor</code> for changes that may <i>not</i> be compatible with existing saves</li><li>Increment <code>patch</code> for changes compatible with existing saves</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>{major:1, minor:0, patch:3}</code></li><li><code>{major:0, minor:2, patch:7}</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a><a href=\"https://semver.org/\" target=\"_blank\">SemVer</a>",
+    },
+    description: {
+      type: "string",
+      "x-intellij-html-description": "Description of a mod as it appears in the mod loader<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Escape quotation marks with a single backslash, like this: <code>\\\"</code></li><li>Write newlines as a single backslash followed by 'n', like this: <code>\\n</code></li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"CoolMod adds ships and weapons and all kinds of cool stuff.\"</code></li><li><code>\"HotMod is too hot for a single paragraph. \\n\\n So here is another one!\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#description\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    gameVersion: {
+      type: "string",
+      pattern: "^0\\.[0-9]{2}[a-z]?(-RC[0-9]+)?$",
+      "x-intellij-html-description": "Most recent version of Starsector that the mod is compatible with; the game will not load mods that specify an older version than the one that the user is running.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Specify both the major version of the game (ie <code>0.97a</code>) and the release candidate (ie <code>-RC11</code>).</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"0.97a-RC11\"</code></li><li><code>\"0.95a-RC15\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#gameVersion\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    dependencies: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id: {
+            type: "string",
+            "x-intellij-html-description": "Identifier for the dependency mod in code<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Must be an exact match</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"wisp_perseanchronicles\"</code></li><li><code>\"timid_supply_forging\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#dependencies\" target=\"_blank\">See wiki for more info.</a>",
+          },
+          version: {
+            type: [
+              "object",
+            ],
+            properties: {
+              major: {
+                type: [
+                  "integer",
+                  "string",
+                ],
+                "x-intellij-html-description": "Major version of a mod. Increment for changes to your mod plugin/API that may impact cross-mod compatibility with any mods invoking methods of the current major version of your mod<a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a>",
+              },
+              minor: {
+                type: [
+                  "integer",
+                  "string",
+                ],
+                "x-intellij-html-description": "Minor version of a mod. Increment for changes that may make the new version incompatible with saves running the current minor version of your mod<a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a>",
+              },
+              patch: {
+                type: [
+                  "integer",
+                  "string",
+                ],
+                "x-intellij-html-description": "Patch version of a mod. Increment for changes that maintain compatibility with saves running the same minor version of your mod<a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a>",
+              },
+            },
+            required: [
+              "major",
+            ],
+            "x-intellij-html-description": "Version of the mod, expressed in SemVer format (major/minor/patch); game uses this to determine whether the set of mods associated with a save-file match those that the player currently has loaded.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Increment <code>major</code> for changes to your mod plugin/API that may impact cross-mod compatibility</li><li>Increment <code>minor</code> for changes that may <i>not</i> be compatible with existing saves</li><li>Increment <code>patch</code> for changes compatible with existing saves</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>{major:1, minor:0, patch:3}</code></li><li><code>{major:0, minor:2, patch:7}</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#version\" target=\"_blank\">See wiki for more info.</a><a href=\"https://semver.org/\" target=\"_blank\">SemVer</a>",
+          },
+        },
+        required: [
+          "id",
+          "version",
+        ],
+      },
+      "x-intellij-html-description": "The set of other mods (and associated major version) that the user must have installed for a mod to work correctly.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Per SemVer, only the major version of a dependency need be specified as dependency maintainers increment it whenever changes are made that may impact cross-mod compatibility. However, the minor and patch version of a dependency may additionally be specified if desired.</li><li>Starsector will refuse to load a mod if each of its dependencies are not present with a matching or higher major version. It will load a mod (with only a warning to the user) if there is a mismatch between minor or patch versions.</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"0.97a-RC11\"</code></li><li><code>\"0.95a-RC15\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#dependencies\" target=\"_blank\">See wiki for more info.</a><a href=\"https://semver.org/\" target=\"_blank\">SemVer</a>",
+    },
+    jars: {
+      type: "array",
+      items: {
+        type: "string",
+        "x-intellij-html-description": "Path (relative to the mod root) indicating a single .jar file that will be loaded by the game during the initial loading-bar screen.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Both or neither of modPlugin and jars should be specified; if one is specified without the other, the mod will not load successfully.</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"jars/PerseanChronicles.jar\"</code></li><li><code>\"libs/wisp/questgiver/4.0.0/Questgiver-4.0.0.jar\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#jars\" target=\"_blank\">See wiki for more info.</a>",
+      },
+      "x-intellij-html-description": "List of paths (relative to the mod root); each path indicates a single .jar file that will be loaded by the game during the initial loading-bar screen.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Both or neither of modPlugin and jars should be specified; if one is specified without the other, the mod will not load successfully.</li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#jars\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    modPlugin: {
+      type: "string",
+      "x-intellij-html-description": "Fully qualified path to a mod's class that implements the <code>com.fs.starfarer.api.ModPlugin</code> interface which is called by the game to run a mod.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Both or neither of modPlugin and jars should be specified; if one is specified without the other, the mod will not load successfully.</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"wisp.perseanchronicles.PerseanChroniclesModPlugin\"</code></li><li><code>\"data.plugins.SFPlugin\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#modPlugin\" target=\"_blank\">See wiki for more info.</a>",
+    },
+    replace: {
+      type: "array",
+      items: {
+        type: "string",
+        "x-intellij-html-description": "Path (relative to starsector-core) indicating a single base-game file that will not be loaded by Starsector alongside the mod.<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Graphics, sound, and .java files are automatically replaced and need not be specified here</li></ul><h6 style=\"font-size: em;\">Examples</h6><ul><li><code>\"data/weapons/proj/breach_srm.proj\"</code></li><li><code>\"data/characters/skills/helmsmanship.skill\"</code></li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#replace\" target=\"_blank\">See wiki for more info.</a>",
+      },
+      "x-intellij-html-description": "List of paths (relative to starsector-core) of base game files that will not be loaded by Starsector alongside the mod<h6 style=\"font-size: em;\">Requirements/Guidelines</h6><ul><li>Graphics, sound, and .java files are automatically replaced and need not be specified here</li></ul><a href=\"https://starsector.wiki.gg/wiki/Mod_Info.json_Overview#replace\" target=\"_blank\">See wiki for more info.</a>",
+    },
+  },
+  required: [
+    "id",
+    "name",
+    "version",
+    "description",
+    "gameVersion",
+  ],
+}
