@@ -18,7 +18,7 @@
       <root url="jar://C:/Program Files (x86)/Fractal Softworks/Starsector/starsector-core/xstream-1.4.10.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="https://fractalsoftworks.com/starfarer.api/" />
+      <root url="https://starsectorcommunityapidocs.github.io/CommunityApiDocs/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://C:/Program Files (x86)/Fractal Softworks/Starsector/starsector-core/starfarer.api.zip!/" />
