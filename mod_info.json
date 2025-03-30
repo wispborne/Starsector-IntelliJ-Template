@@ -5,24 +5,24 @@
   "utility": false,
   "version": { "major": '1', "minor": '0', "patch": '0' },
   "description": "Starsector IntelliJ template.",
-  "gameVersion": "0.97a-RC6",
+  "gameVersion": "0.98a-RC5",
   "jars": [ "jars/Template.jar" ],
   "modPlugin": "author.modname.TemplateModPlugin",
   "dependencies": [
-    #{
-    #    "id": "lw_lazylib",
-    #    "name": "LazyLib",
-    #    #"version": "2.7b"
-    #},
-    #{
-    #    "id": "MagicLib",
-    #    "name": "MagicLib",
-    #    #"version": "0.34"
-    #},
-    #{
-    #    "id": "shaderLib",
-    #    "name": "GraphicsLib",
-    #    #"version": "1.5.1"
-    #}
+   # {
+   #     "id": "lw_lazylib",
+   #     "name": "LazyLib", # Optional (recommended)
+   #     #"version": "2.7b" # Optional
+   # },
+   # {
+   #     "id": "MagicLib",
+   #     "name": "MagicLib",
+   #     #"version": "0.34"
+   # },
+   # {
+   #     "id": "shaderLib",
+   #     "name": "GraphicsLib",
+   #     #"version": "1.5.1"
+   # }
   ],
 }

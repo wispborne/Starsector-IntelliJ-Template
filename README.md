@@ -9,7 +9,7 @@ This is a template for a generic Starsector mod using Java.
 When you are done, you will have a mod that does nothing, but is ready for anything to be added.
 
 Written for IntelliJ Community ([free download](https://www.jetbrains.com/idea/download)), but should work with any IDE.
-You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2022.2 as of writing.
+You do NOT need IntelliJ Ultimate. Latest version of IntelliJ is 2024.3 as of writing.
 
 ## Optional
 
@@ -58,11 +58,8 @@ You may not need everything, but leaving them in place doesn't hurt either.
 ### Set your SDK (the thing that compiles the Java code)
 
 - Open `File -> Project Structure -> Project`.
-- Ensure that the `Language Level` is set to `7`.
-- Set an SDK. This can be 1.7 (aka 7), 1.8 (aka 8), or higher. You can also download an SDK from this dropdown, if the Download option is provided.
-  - Otherwise, [download JDK 7](https://drive.google.com/file/d/1cle4yGhPkROCu3z5WKHKLR098ObGLwPV/view), extract it anywhere, and set it as the SDK.
-  - JDK 7: https://drive.google.com/file/d/1cle4yGhPkROCu3z5WKHKLR098ObGLwPV/view
-  - Using JDK 8 (1.8) or higher _may_ have slightly faster compile times, but is otherwise the same as using JDK 7 (1.7).
+- Ensure that the `Language Level` is set to `17`.
+- Set an SDK. This should be 17 (recommended) or higher. You can also download an SDK from this dropdown, if the Download option is provided.
 
 ![SDKs!](readme_files/intellij-sdk.png "SDKs")
 
@@ -75,20 +72,21 @@ You may not need everything, but leaving them in place doesn't hurt either.
   install.
 - Click Ok. You should now be able to choose Run Starsector from the Run menu and then click the **Debug** button (the icon
   of a bug)
-- If you are running on linux, the VM Arguments should instead be
-
-  ```-server -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005 -Xverify:none -Djava.library.path=./native/linux -Xms1536m -Xmx1536m -Xss2048k -classpath janino.jar:commons-compiler.jar:commons-compiler-jdk.jar:starfarer.api.jar:starfarer_obf.jar:jogg-0.0.7.jar:jorbis-0.0.15.jar:json.jar:lwjgl.jar:jinput.jar:log4j-1.2.9.jar:lwjgl_util.jar:fs.sound_obf.jar:fs.common_obf.jar:xstream-1.4.10.jar -Dcom.fs.starfarer.settings.paths.saves=./saves -Dcom.fs.starfarer.settings.paths.screenshots=./screenshots -Dcom.fs.starfarer.settings.paths.mods=./mods -Dcom.fs.starfarer.settings.paths.logs=. -Dcom.fs.starfarer.settings.linux=true com.fs.starfarer.StarfarerLauncher```
+- If you are running on linux:
+  - for the VM Arguments, copy your `starsector_linux.sh` file and paste it into the VM Arguments field.
+  - Then, at the start of the args, add `-server -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005`
 
 ![Run configuration!](readme_files/intellij-run.png "Run configuration")
 
-### "I didn't install the game to the default location"
+### "I didn't put the template in my mods folder"
 
-If your game isn't installed to `C:\Program Files (x86)\Fractal Softworks\Starsector` then we need to fix some more file paths.
+If you want to symlink or something to the mods folder, then we need to fix some more file paths.
 
-If you did install to the default location, skip to the next part.
+If you placed the template folder in your mods folder, skip to the next part.
 
 1. Open `.idea/libraries/starfarer_api.xml`. It should be fairly clear what needs to be fixed; any path that's pointing to the default game installation should be changed to point to wherever you have it installed.
    1. It's also possible to edit this in File -> Project Structure -> Libraries, but for editing en masse, editing the xml directly is simpler.
+2. Do the same for `.run/Run Starsector.xml`.
 
 ![Library configuration!](readme_files/intellij-libs.png "Library configuration")
 
