@@ -1,7 +1,5 @@
 # Starsector IntelliJ Mod Template
 
-v1.0.1
-
 ## Description
 
 This is a template for a generic Starsector mod using Java.
