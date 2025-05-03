@@ -44,9 +44,18 @@ jobs:
           cd ./.github/workflows/
           chmod +x ./runner.sh
           ./runner.sh
+
+      - name: Upload release binaries
+        uses: alexellis/upload-assets@0.4.0
+        if: $GITHUB_EVENT_NAME == "release"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          asset_paths: '[".github/workflows/artifacts/*"]'
           
       - name: Publish Release on GitHub
         uses: "ncipollo/release-action@v1.12.0"
+        if: $GITHUB_EVENT_NAME != "release"
         with:
           name: ${{ env.VERSION }}
           tag: ${{ env.VERSION }}
