@@ -6,21 +6,12 @@ on:
     tags: "*"
     branches:
       - "!*"
-
-  # Triggers the workflow when a new release is created using the UI
-  release:
-    types: [published]
-
+      
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   build:
-    # Skip if this is a release event for the same tag that was pushed
-    if: |
-      (github.event_name == 'push' && github.ref_type == 'tag') ||
-      (github.event_name == 'release' && !contains(github.event.release.tag_name, github.ref))
-    
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -50,14 +41,6 @@ jobs:
           chmod +x ./runner.sh
           ./runner.sh
 
-      - name: Upload release binaries
-        uses: alexellis/upload-assets@0.4.0
-        if: github.event_name == 'release'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          asset_paths: '[".github/workflows/artifacts/*"]'
-          
       - name: Publish Release on GitHub
         uses: "ncipollo/release-action@v1.12.0"
         if: github.event_name != 'release'
