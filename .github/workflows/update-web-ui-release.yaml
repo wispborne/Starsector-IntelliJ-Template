@@ -1,9 +1,9 @@
 name: Update GitHub Release
 
 on:
-  # Triggers the workflow when a new release is created using the UI
-  release:
-    types: [published]
+  # # Triggers the workflow when a new release is created using the UI
+  # release:
+  #   types: [published]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
