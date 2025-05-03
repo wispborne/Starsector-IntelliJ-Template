@@ -44,6 +44,7 @@ jobs:
       - name: Publish Release on GitHub
         uses: "ncipollo/release-action@v1.12.0"
         with:
+          allowUpdates: true
           name: ${{ env.VERSION }}
           tag: ${{ env.VERSION }}
           bodyFile: changes.txt
