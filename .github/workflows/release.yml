@@ -45,9 +45,6 @@ jobs:
           chmod +x ./runner.sh
           ./runner.sh
 
-      - run: echo "event name is:" ${{ github.event_name }} 
-      - run: echo "event type is:" ${{ github.event.action }} 
-
       - name: Upload release binaries
         uses: alexellis/upload-assets@0.4.0
         if: github.event_name == 'release'
