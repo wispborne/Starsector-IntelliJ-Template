@@ -1,4 +1,4 @@
-name: GitHub Release
+name: Create GitHub Release
 
 on:
   # Triggers the workflow on pushing a tag only
