@@ -1,9 +1,11 @@
-name: Update GitHub Release
+name: Create GitHub Release
 
 on:
-  # # Triggers the workflow when a new release is created using the UI
-  # release:
-  #   types: [published]
+  # Triggers the workflow on pushing a tag only
+  push:
+    tags: ["*"]
+    branches:
+      - "!*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,7 +20,7 @@ jobs:
       # GitHub Actions by default doesn't check out tags, so make sure those are included
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Fetch Tags
         run: git fetch --prune --unshallow --tags
 
@@ -39,10 +41,15 @@ jobs:
           chmod +x ./runner.sh
           ./runner.sh
 
-      - name: Upload release binaries
-        uses: alexellis/upload-assets@0.4.0
-        if: github.event_name == 'release'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Publish Release on GitHub
+        uses: "ncipollo/release-action@v1.12.0"
+        if: github.event_name != 'release'
         with:
-          asset_paths: '[".github/workflows/artifacts/*"]'
+          name: ${{ env.VERSION }}
+          tag: ${{ env.VERSION }}
+          bodyFile: changes.txt
+          draft: false
+          prerelease: '${{ env.IS_PRERELEASE }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
+          artifacts: ".github/workflows/artifacts/*"
