@@ -1,4 +1,4 @@
-name: GitHub Release
+name: Update GitHub Release
 
 on:
   # Triggers the workflow when a new release is created using the UI
