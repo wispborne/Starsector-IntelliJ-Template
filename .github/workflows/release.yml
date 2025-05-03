@@ -16,6 +16,11 @@ on:
 
 jobs:
   build:
+    # Skip if this is a release event for the same tag that was pushed
+    if: |
+      (github.event_name == 'push' && github.ref_type == 'tag') ||
+      (github.event_name == 'release' && !contains(github.event.release.tag_name, github.ref))
+    
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
