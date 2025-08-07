@@ -1,7 +1,7 @@
 {
   "id": "author_modname", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
   "name": "Template Mod", # Displayed to the player
-  "author": "Wisp",
+  "author": "Your Name",
   "utility": false,
   "version": { "major": '1', "minor": '0', "patch": '0' },
   "description": "Starsector IntelliJ template.",
@@ -16,13 +16,13 @@
    # },
    # {
    #     "id": "MagicLib",
-   #     "name": "MagicLib",
-   #     #"version": "0.34"
+   #     "name": "MagicLib", # Optional (recommended)
+   #     #"version": "0.34" # Optional
    # },
    # {
    #     "id": "shaderLib",
-   #     "name": "GraphicsLib",
-   #     #"version": "1.5.1"
+   #     "name": "GraphicsLib", # Optional (recommended)
+   #     #"version": "1.5.1" # Optional
    # }
   ],
 }
